@@ -1,0 +1,23 @@
+import math
+def cart_pol(x,y):
+       r=(x**2+y**2)**0.5
+       theta=math.atan(y/x)
+       return [r,theta]
+def pol_cart(r,theta):
+    x=r*math.cos(theta)
+    y=r*math.sin(theta)
+    return [x,y]
+print("1. Polar to Cartesian")
+print("2. Cartesian to Polar")
+print("Choose either (1) or (2)")
+num=int(input())
+if num==1:
+    print('Give input in the form of "r,theta"')
+    r,theta=map(float,input().split(","))
+    [x,y]=pol_cart(r,theta)
+    print(x,y)
+else:
+    print('Give input in the form of "x,y"')
+    x,y=map(float,input().split(","))
+    [r,theta]=cart_pol(x,y)
+    print(r,theta)
